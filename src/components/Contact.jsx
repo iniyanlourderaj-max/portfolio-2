@@ -33,8 +33,6 @@ const Contact = () => {
             title="let&#39;s b<b>u</b>ild the <br /> new era of <br /> C<b>S</b> t<b>o</b>gether."
             className="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !leading-[.9] text-blue-50"
           />
-
-          <Button title="contact us" containerClass="mt-10 cursor-pointer" />
         </div>
       </div>
     </div>

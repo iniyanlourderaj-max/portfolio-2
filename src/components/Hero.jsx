@@ -86,13 +86,14 @@ const Hero  = () => {
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
               <br/>A student <br/> who loves to do random stuff.
             </p>
-
-            <Button
-              id="watch-trailer"
-              title="view my work"
-              leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
-            />
+<a href="#projects">
+  <Button
+    id="watch-trailer"
+    title="view my work"
+    leftIcon={<TiLocationArrow />}
+    containerClass="bg-yellow-300 flex-center gap-1"
+  />
+</a>
     
           </div>
         </div>      
