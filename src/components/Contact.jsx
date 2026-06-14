@@ -1,28 +1,36 @@
-import AnimatedTitle from "./AnimatedTitle";
+import { FiArrowUpRight, FiMail } from "react-icons/fi";
 
 const Contact = () => {
   return (
-    <div id="contact" className="my-20 min-h-96 w-screen px-5 md:px-10">
-      <div className="relative min-h-[34rem] overflow-hidden rounded-lg bg-black text-blue-50">
-        <img
-          src="/img/me_2.png"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-black/60" />
+    <section id="contact" className="relative overflow-hidden bg-[#090e19] py-24 md:py-32">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-[120px]" />
+      <div className="section-shell relative text-center">
+        <p className="section-kicker">05 · Start a conversation</p>
+        <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-white sm:text-6xl md:text-7xl">
+          Let&apos;s create something extraordinary.
+        </h2>
+        <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-slate-400 md:text-base">
+          I&apos;m always open to thoughtful projects, research opportunities,
+          internships, and conversations about building useful technology.
+        </p>
 
-        <div className="relative z-10 flex min-h-[34rem] flex-col items-center justify-center px-4 py-24 text-center">
-          <p className="mb-10 font-general text-[10px] uppercase">
-            Join Me
-          </p>
-
-          <AnimatedTitle
-            title="let&#39;s b<b>u</b>ild the <br /> new era of <br /> C<b>S</b> t<b>o</b>gether."
-            className="special-font w-full font-zentry !text-5xl !leading-[.9] text-blue-50 md:!text-[6.2rem]"
-          />
+        <div className="mt-9 flex flex-wrap justify-center gap-4">
+          <a href="mailto:iniyanlourderaj@gmail.com" className="cyan-button">
+            <FiMail />
+            Send an email
+          </a>
+          <a
+            href="https://www.linkedin.com/in/iniyanlourderaj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ghost-button"
+          >
+            LinkedIn
+            <FiArrowUpRight />
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

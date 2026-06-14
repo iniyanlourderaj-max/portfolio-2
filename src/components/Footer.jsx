@@ -1,32 +1,30 @@
-import { FaDiscord, FaLinkedin } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
-const socialLinks = [
-  { href: "https://discord.com/users/1442087375609139326", icon: <FaDiscord /> },
-  { href: "https://www.linkedin.com/in/iniyanlourderaj/", icon: <FaLinkedin /> },
-  { href: "mailto:iniyanlourderaj@gmail.com", icon: <SiGmail /> },
+const links = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/iniyanlourderaj/" },
+  { label: "Discord", href: "https://discord.com/users/1442087375609139326" },
+  { label: "Email", href: "mailto:iniyanlourderaj@gmail.com" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="w-screen bg-[#5542ff] py-4 text-black">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
-        <p className="text-center text-sm font-light md:text-left">
-      Made by Iniyan Lourderaj.
-        </p>
-
-        <div className="flex justify-center gap-4  md:justify-start">
-          {socialLinks.map((link, index) => (
+    <footer className="border-t border-white/10 bg-[#070b14] py-7">
+      <div className="section-shell flex flex-col gap-5 font-general text-[9px] uppercase tracking-[0.18em] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 Iniyan Lourderaj</p>
+        <div className="flex flex-wrap gap-6">
+          {links.map(({ label, href }) => (
             <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black transition-colors duration-500 ease-in-out hover:text-white"
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="transition-colors hover:text-cyan-300"
             >
-              {link.icon}
+              {label}
             </a>
           ))}
         </div>
+        <a href="#home" className="transition-colors hover:text-cyan-300">
+          Back to top ↑
+        </a>
       </div>
     </footer>
   );

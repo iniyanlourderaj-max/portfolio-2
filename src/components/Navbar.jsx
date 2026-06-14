@@ -1,121 +1,104 @@
 import clsx from "clsx";
-import gsap from "gsap";
-import { useWindowScroll } from "react-use";
-import { useEffect, useRef, useState } from "react";
-import { TiLocationArrow } from "react-icons/ti";
+import { useEffect, useState } from "react";
 
-import Button from "./Button";
+const navItems = [
+  { label: "Work", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
 
-const navItems = ["Home", "EXPERIENCE", "PROJECTS", "ABOUT", "CONTACT"];
-
-const NavBar = () => {
-  // State for toggling audio and visual indicator
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
-
-  // Refs for audio and navigation container
-  const audioElementRef = useRef(null);
-  const navContainerRef = useRef(null);
-
-  const { y: currentScrollY } = useWindowScroll();
-  const [isNavVisible, setIsNavVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  // Toggle audio and visual indicator
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prev) => !prev);
-    setIsIndicatorActive((prev) => !prev);
-  };
-
-  // Manage audio playback
-  useEffect(() => {
-    if (isAudioPlaying) {
-      audioElementRef.current.play();
-    } else {
-      audioElementRef.current.pause();
-    }
-  }, [isAudioPlaying]);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (currentScrollY === 0) {
-      // Topmost position: show navbar without floating-nav
-      setIsNavVisible(true);
-      navContainerRef.current.classList.remove("floating-nav");
-    } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
-      setIsNavVisible(false);
-      navContainerRef.current.classList.add("floating-nav");
-    } else if (currentScrollY < lastScrollY) {
-      // Scrolling up: show navbar with floating-nav
-      setIsNavVisible(true);
-      navContainerRef.current.classList.add("floating-nav");
-    }
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
 
-    setLastScrollY(currentScrollY);
-  }, [currentScrollY, lastScrollY]);
-
-  useEffect(() => {
-    gsap.to(navContainerRef.current, {
-      y: isNavVisible ? 0 : -100,
-      opacity: isNavVisible ? 1 : 0,
-      duration: 0.2,
-    });
-  }, [isNavVisible]);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   return (
-    <div
-      ref={navContainerRef}
-      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
-    >
-      <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4">
-          {/* Logo and Product button */}
-          <div className="flex items-center gap-7">
-            <img src="/img/1.png" alt="logo" className="w-10" />
+    <header className="fixed inset-x-3 top-3 z-50 md:inset-x-5">
+      <nav className="relative mx-auto flex h-16 max-w-[86rem] items-center justify-between rounded-full border border-white/15 bg-[#0b1020]/90 px-4 shadow-[0_2px_0_rgba(255,255,255,0.18)] backdrop-blur-xl md:px-7">
+        <a
+          href="#home"
+          className="flex min-w-0 items-center gap-3 font-general text-sm font-semibold tracking-[0.04em] text-slate-200 sm:text-base"
+        >
+          <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white">
+            <img
+              src="/img/1.png"
+              alt=""
+              className="size-full scale-[1.65] object-cover object-center"
+            />
+          </span>
+          <span className="truncate">Iniyan Lourderaj</span>
+        </a>
 
-          </div>
-
-          {/* Navigation Links and Audio Button */}
-          <div className="flex h-full items-center">
-            <div className="hidden md:block">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-
-            <button
-              onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-0.5"
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
+          {navItems.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              className="font-general text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500 transition-colors hover:text-cyan-300"
             >
-              <audio
-                ref={audioElementRef}
-                className="hidden"
-                src="/audio/code_music.mp3"
-                loop
-              />
-              {[1, 2, 3, 4].map((bar) => (
-                <div
-                  key={bar}
-                  className={clsx("indicator-line", {
-                    active: isIndicatorActive,
-                  })}
-                  style={{
-                    animationDelay: `${bar * 0.1}s`,
-                  }}
-                />
-              ))}
-            </button>
-          </div>
-        </nav>
-      </header>
-    </div>
+              {label}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-3">
+          <a href="#contact" className="cyan-button hidden !px-6 !py-2.5 sm:inline-flex">
+            Hire me
+          </a>
+          <button
+            type="button"
+            onClick={() => setIsOpen((value) => !value)}
+            className="flex size-10 flex-col items-center justify-center gap-1.5 rounded-full border border-white/15 text-white lg:hidden"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
+            <span
+              className={clsx(
+                "h-px w-5 bg-current transition-transform",
+                isOpen && "translate-y-[3.5px] rotate-45",
+              )}
+            />
+            <span
+              className={clsx(
+                "h-px w-5 bg-current transition-transform",
+                isOpen && "-translate-y-[3.5px] -rotate-45",
+              )}
+            />
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        className={clsx(
+          "mx-auto mt-2 max-w-[86rem] rounded-3xl border border-white/10 bg-[#0b1020]/95 px-6 shadow-xl backdrop-blur-xl transition-all lg:hidden",
+          isOpen
+            ? "max-h-80 py-4 opacity-100"
+            : "max-h-0 overflow-hidden py-0 opacity-0",
+        )}
+      >
+        {navItems.map(({ label, href }) => (
+          <a
+            key={label}
+            href={href}
+            onClick={() => setIsOpen(false)}
+            className="block border-b border-white/10 py-4 font-general text-xs uppercase tracking-[0.2em] text-slate-300"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </header>
   );
 };
 
-export default NavBar;
+export default Navbar;

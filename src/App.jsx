@@ -1,7 +1,5 @@
-import React from 'react'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
-import AnimatedTitle from './components/AnimatedTitle.jsx'
 import NavBar from './components/Navbar.jsx'
 import Features from './components/Features.jsx'
 import Projects from './components/Projects.jsx'
@@ -11,12 +9,12 @@ import Footer from './components/Footer.jsx'
 
 const App = () => {
   return (
-    <main className="relative min-h-screen w-screen overflow-x-hidden">
-      <Hero/>
-      <About/>
+    <main className="relative min-h-screen overflow-x-hidden bg-[#070b14]">
       <NavBar/>
-      <Features/>
+      <Hero/>
       <Projects/>
+      <Features/>
+      <About/>
       <Skills/>
       <Contact/>
       <Footer/>

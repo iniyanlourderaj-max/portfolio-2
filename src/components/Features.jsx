@@ -1,137 +1,83 @@
-const highlights = [
+const experiences = [
   {
-    type: "Project",
+    number: "01",
     date: "2026",
-    title: "JobQuest",
+    title: "JobQuest Founder and Developer",
     description:
-      "An AI-powered career platform that helps job seekers improve their resumes, practice interviews, and discover better opportunities.",
-    tags: ["React", "AI", "Product Design"],
+      "Design and develop an AI-powered career platform for resume improvement, interview practice, and more effective job discovery.",
+    tags: "React / AI / Product Design",
   },
   {
-    type: "Freelance",
+    number: "02",
     date: "2026",
-    title: "WEB DEVELOPMENT",
+    title: "Web Developer",
     description:
-      "Designed and developed a modern, SEO-optimized website for clients, focusing on performance, responsive design, and lead generation.",
-    tags: ["React", "Vercel", "Hostinger", "SEO"],
-    links: [
-      {
-        label: "Iniyan Lourderaj",
-        url: "https://iniyanlourderaj.com",
-      },
-      {
-        label: "Lewisburg BJJ",
-        url: "https://www.lewisburg-bjj.com/",
-      },
-    ],
+      "Design and build responsive, SEO-focused websites for clients",
+    tags: "React / Vercel / Hostinger / SEO",
   },
   {
-    type: "Experience",
+    number: "03",
     date: "2026",
-    title: "Research at BUCKNELL",
+    title: "Bucknell Atmospheric Research",
     description:
-      "Performed atmospheric data analysis using low-cost air quality sensors to evaluate AQI trends in the Shamokin region, supporting environmental research at Bucknell University under Professor Douglas Collins.",
-    tags: ["Research", "Problem Solving", "Teamwork", "Matlab", "Data Analysis"],
+      "Analyzed air-quality sensor data and AQI trends in the Shamokin region under Professor Douglas Collins.",
+    tags: "MATLAB / Data Analysis / Research",
   },
   {
-    type: "Experience",
-    date: "2025",
-    title: "Research at NISER",
+    number: "04",
+    date: "2025 - Present",
+    title: "Rooke Chapel Student Manager",
     description:
-      "Explored academic research and strengthened my ability to investigate complex problems, analyze results, and communicate technical ideas.",
-    tags: ["Research", "Problem Solving", "Teamwork"],
+      "Support Rooke Chapel operations, campus events, and Christian community work while coordinating with staff and student teams.",
+    tags: "Leadership / Operations / Community",
   },
-
   {
-    type: "Leadership",
-    date: "2024",
-    title: "Student President",
+    number: "05",
+    date: "2023",
+    title: "Mathematics Research Intern at NISER",
     description:
-      "Led student initiatives, represented my peers, and coordinated events while developing confidence in communication and collaboration.",
-    tags: ["Leadership", "Communication", "Community"],
+      "Participated in a mathematics research internship at NISER under Professor Brundaban Sahu.",
+    tags: "Mathematics / Research / Problem Solving",
   },
 ];
 
-const FeatureCard = ({ type, date, title, description, tags, links }) => (
-  <article
-    tabIndex={0}
-    className="group relative min-h-[25rem] w-[85vw] shrink-0 snap-center overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-7 outline-none transition-all duration-500 ease-out hover:-translate-y-3 hover:border-violet-300 hover:shadow-[0_22px_70px_-20px_rgba(87,36,255,0.85)] focus-visible:-translate-y-3 focus-visible:border-violet-300 focus-visible:shadow-[0_22px_70px_-20px_rgba(87,36,255,0.85)] sm:w-[70vw] md:min-h-[28rem] md:w-auto md:snap-none"
-  >
-    <div className="pointer-events-none absolute -right-20 -top-20 size-48 rounded-full bg-violet-300/20 blur-3xl transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100 md:opacity-0" />
-
-    <div className="relative z-10 flex h-full flex-col">
-      <div className="flex items-center justify-between">
-        <span className="rounded-full border border-violet-300/50 bg-violet-300/10 px-3 py-1 font-general text-[10px] uppercase tracking-[0.2em] text-violet-300">
-          {type}
-        </span>
-        <span className="font-circular-web text-sm text-blue-50/50">{date}</span>
-      </div>
-
-      <div className="mt-auto pt-16">
-        <h3 className="font-zentry text-4xl font-black uppercase text-blue-50 md:text-5xl">
-          {title}
-        </h3>
-        <p className="mt-5 font-circular-web text-sm leading-6 text-blue-50/60 md:text-base">
-          {description}
-        </p>
-
-        {links?.length > 0 && (
-          <div className="mt-6 flex flex-col gap-2">
-            {links.map(({ label, url }) => (
-              <a
-                key={url}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border border-violet-300/40 bg-violet-300/10 px-4 py-2.5 font-general text-xs uppercase tracking-wider text-blue-50 transition-colors hover:border-violet-300 hover:bg-violet-300/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300"
-              >
-                View {label}
-              </a>
-            ))}
-          </div>
-        )}
-
-        <div className="mt-7 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-white/[0.07] px-3 py-1.5 text-xs text-blue-50/70"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  </article>
-);
-
 const Features = () => {
   return (
-    <section id="experience" className="overflow-hidden bg-black py-24 text-blue-50 md:py-32">
-      <div className="container mx-auto px-6 md:px-10">
-        <div className="max-w-2xl">
-          <p className="font-general text-xs uppercase tracking-[0.25em] text-violet-300">
-            Experience and projects
-          </p>
-          <h2 className="mt-4 font-zentry text-5xl font-black uppercase sm:text-6xl md:text-7xl">
-            Things I have built and led
-          </h2>
-          <p className="mt-6 max-w-xl font-circular-web text-base leading-7 text-blue-50/50">
-            A selection of projects, research, and leadership experiences that
-            have shaped how I learn, build, and solve problems.
-          </p>
+    <section id="experience" className="border-b border-white/10 bg-[#0a0f1b] py-24 md:py-32">
+      <div className="section-shell">
+        <div className="max-w-3xl">
+          <p className="section-kicker">02 / Experience</p>
+          <h2 className="section-title mt-5">Learning by building and leading.</h2>
         </div>
 
-        <div className="-mx-6 mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-12 pt-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
-          {highlights.map((highlight) => (
-            <FeatureCard key={highlight.title} {...highlight} />
+        <div className="mt-14 border-t border-white/10">
+          {experiences.map(({ number, date, title, description, tags }) => (
+            <article
+              key={title}
+              className="group grid gap-5 border-b border-white/10 py-8 transition-colors hover:bg-white/[0.02] md:grid-cols-[4rem_0.7fr_1.3fr] md:px-4"
+            >
+              <span className="font-general text-[10px] tracking-[0.2em] text-cyan-300">
+                {number}
+              </span>
+              <div>
+                <p className="font-general text-[9px] uppercase tracking-[0.18em] text-slate-500">
+                  {date}
+                </p>
+                <h3 className="mt-3 text-xl font-medium text-white md:text-2xl">
+                  {title}
+                </h3>
+              </div>
+              <div>
+                <p className="max-w-xl text-sm leading-7 text-slate-400">
+                  {description}
+                </p>
+                <p className="mt-4 font-general text-[9px] uppercase tracking-[0.16em] text-cyan-300/70">
+                  {tags}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
-
-        <p className="mt-1 text-center font-general text-[10px] uppercase tracking-[0.2em] text-blue-50/35 md:hidden">
-          Swipe to explore
-        </p>
       </div>
     </section>
   );

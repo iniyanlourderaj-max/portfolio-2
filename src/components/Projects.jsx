@@ -1,85 +1,128 @@
-import React from 'react'
+import { FiArrowUpRight } from "react-icons/fi";
+
+const metrics = [
+  { value: "AI", label: "Career guidance" },
+  { value: "3+", label: "Core tools" },
+  { value: "100%", label: "Responsive" },
+  { value: "01", label: "Product vision" },
+];
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-black py-24">
-       <div className="bg-black py-24 sm:py-32">
-  <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-    <h2 className="text-center text-base/7 font-semibold text-indigo-400">JOBQUEST - COMING SOON!</h2>
-    <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Everything you need to pursue your passion</p>
-    <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-      <div className="relative lg:row-span-2">
-        <div className="absolute inset-px rounded-lg bg-gray-800 lg:rounded-l-4xl"></div>
-        <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-          <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-            <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Mobile responsive</p>
-            <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">Use Jobquest Anywhere you go so that you can access your job search tools and resources on any device. <br></br> Always Be Prepared!</p>
+    <section id="projects" className="border-b border-white/10 bg-[#090d17] py-24 md:py-32">
+      <div className="section-shell">
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div>
+            <p className="section-kicker">01 / Selected work</p>
+            <h2 className="section-title mt-4">Building products with purpose.</h2>
           </div>
-          <div className="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
-            <div>
+          <p className="max-w-md text-sm leading-6 text-slate-500">
+            A focused selection of products and client work shaped by research,
+            practical engineering, and a bias toward shipping.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
+          <article className="panel group relative min-h-[34rem] overflow-hidden p-7 md:p-10">
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex items-center justify-between">
+                <p className="section-kicker">Featured / 2026</p>
+                <span className="border border-cyan-300/20 px-3 py-1 font-general text-[9px] uppercase tracking-[0.2em] text-cyan-300">
+                  Coming soon
+                </span>
+              </div>
+
+              <div className="mt-12 max-w-lg">
+                <h3 className="text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">
+                  JobQuest
+                </h3>
+                <p className="mt-5 text-sm leading-7 text-slate-400 md:text-base">
+                  An AI-powered career platform for stronger resumes, realistic
+                  interview practice, and more confident job searches.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {["React", "AI", "Voice", "Product Design"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="border border-white/10 px-3 py-1.5 font-general text-[9px] uppercase tracking-[0.16em] text-slate-400"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-auto grid items-end gap-8 pt-12 sm:grid-cols-2">
+                <div className="overflow-hidden border border-white/10 bg-[#070b14] p-4">
+                  <img
+                    src="/img/JOBQUEST.jpg"
+                    alt="JobQuest interface"
+                    className="w-full transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
                 <img
-  src="/img/jobquest_phone_clean.png"
-  alt="Jobquest phone"
-  className="w-40 sm:w-52 md:w-64 mx-auto object-contain py-10"
-/>
-            </div>
-          </div>
-        </div>
-        <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 lg:rounded-l-4xl"></div>
-      </div>
-      <div className="relative max-lg:row-start-1">
-        <div className="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-t-4xl"></div>
-        <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
-          <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-            <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Performance</p>
-            <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">Real-time feedback, fast processing, and seamless voice interactions—so you can practice without interruptions and improve faster.</p>
-          </div>
-          <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
-            <img src="/img/JOBQUEST.jpg" alt="" className="w-full max-lg:max-w-xs" />
-          </div>
-        </div>
-        <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-t-4xl"></div>
-      </div>
-      <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-        <div className="absolute inset-px rounded-lg bg-gray-800"></div>
-        <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-          <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-            <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Security</p>
-            <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">JobQuest ensures your data is secure and private. We use industry-standard encryption and security protocols to protect your information.</p>
-          </div>
-          <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
-            <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png" alt="" className="h-[min(152px,40cqw)] object-cover" />
-          </div>
-        </div>
-        <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15"></div>
-      </div>
-      <div className="relative lg:row-span-2">
-        <div className="absolute inset-px rounded-lg bg-gray-800 max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
-        <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-          <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-            <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Powerful APIs</p>
-            <p className="mt-2 max-w-lg text-sm/6 text-gray-400 max-lg:text-center">With state-of-the-art speech recognition, natural language understanding, and text-to-speech technologies powered by advanced AI APIs, JobQuest offers the ability to have seamless voice interviews, structured evaluations, and adaptive question generation—all within your browser.</p>
-          </div>
-          <div className="relative min-h-120 w-full grow">
-           <div className="absolute top-10 right-0 bottom-0 left-10 flex items-center justify-center overflow-hidden rounded-tl-xl bg-gray-900/60 outline outline-white/10">
-  <img
-    src="/img/artificial-intelligence.png"
-    alt=""
-    className="w-40 sm:w-42 md:w-44 object-contain"
-  />
-              <div className="px-6 pt-6 pb-14">
+                  src="/img/jobquest_phone_clean.png"
+                  alt="JobQuest mobile interface"
+                  className="mx-auto max-h-64 object-contain"
+                />
               </div>
             </div>
-          </div>
+          </article>
+
+          <article className="panel flex min-h-[34rem] flex-col p-7 md:p-10">
+            <p className="section-kicker">Freelance / 2026</p>
+            <h3 className="mt-8 text-3xl font-semibold tracking-[-0.035em] text-white">
+              Web experiences for real clients.
+            </h3>
+            <p className="mt-5 text-sm leading-7 text-slate-400">
+              Responsive, SEO-minded websites designed to communicate clearly,
+              perform quickly, and turn visits into meaningful action.
+            </p>
+
+            <div className="mt-10 space-y-3">
+              <a
+                href="https://iniyanlourderaj.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between border border-white/10 px-4 py-4 text-sm text-slate-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-300"
+              >
+                Iniyan Lourderaj
+                <FiArrowUpRight />
+              </a>
+              <a
+                href="https://www.lewisburg-bjj.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between border border-white/10 px-4 py-4 text-sm text-slate-300 transition-colors hover:border-cyan-300/40 hover:text-cyan-300"
+              >
+                Lewisburg BJJ
+                <FiArrowUpRight />
+              </a>
+            </div>
+
+            <div className="mt-auto border-t border-white/10 pt-6">
+              <p className="font-general text-[10px] uppercase tracking-[0.18em] text-slate-500">
+                React / Vercel / Hostinger / SEO
+              </p>
+            </div>
+          </article>
         </div>
-        <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
+
+        <div className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {metrics.map(({ value, label }) => (
+            <div key={label} className="panel p-6">
+              <p className="text-3xl font-semibold tracking-[-0.04em] text-cyan-300 md:text-4xl">
+                {value}
+              </p>
+              <p className="mt-2 font-general text-[9px] uppercase tracking-[0.18em] text-slate-500">
+                {label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
