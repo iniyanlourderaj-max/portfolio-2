@@ -6,6 +6,10 @@ import {
   SiGit,
   SiVercel,
   SiFigma,
+  SiFlutter,
+  SiUnity,
+  SiTypescript,
+  SiNodedotjs,
 } from "react-icons/si";
 import { FiBarChart2 } from "react-icons/fi";
 
@@ -18,7 +22,22 @@ const skills = [
   { name: "Vercel", icon: <SiVercel /> },
   { name: "Figma", icon: <SiFigma /> },
   { name: "MATLAB", icon: <FiBarChart2 /> },
+  { name: "Flutter", icon: <SiFlutter /> },
+  { name: "Unity", icon: <SiUnity /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "Node.js", icon: <SiNodedotjs /> },
 ];
+
+const SkillCard = ({ name, icon }) => (
+  <div className="panel group flex min-h-36 w-36 shrink-0 flex-col items-center justify-center gap-4 p-4 text-center transition-colors hover:border-cyan-300/40 sm:w-40">
+    <span className="text-2xl text-cyan-300 transition-transform group-hover:-translate-y-1">
+      {icon}
+    </span>
+    <span className="font-general text-[9px] uppercase tracking-[0.16em] text-slate-400">
+      {name}
+    </span>
+  </div>
+);
 
 const timeline = [
   {
@@ -67,20 +86,19 @@ const Skills = () => {
           <h2 className="section-title mt-5">Tools I use to make ideas real.</h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
-          {skills.map(({ name, icon }) => (
-            <div
-              key={name}
-              className="panel group flex min-h-36 flex-col items-center justify-center gap-4 p-4 text-center transition-colors hover:border-cyan-300/40"
-            >
-              <span className="text-2xl text-cyan-300 transition-transform group-hover:-translate-y-1">
-                {icon}
-              </span>
-              <span className="font-general text-[9px] uppercase tracking-[0.16em] text-slate-400">
-                {name}
-              </span>
+        <div className="skills-marquee mt-14 overflow-hidden">
+          <div className="skills-marquee-track flex w-max">
+            <div className="flex shrink-0 gap-3 pr-3">
+              {skills.map(({ name, icon }) => (
+                <SkillCard key={name} name={name} icon={icon} />
+              ))}
             </div>
-          ))}
+            <div aria-hidden="true" className="flex shrink-0 gap-3 pr-3">
+              {skills.map(({ name, icon }) => (
+                <SkillCard key={`duplicate-${name}`} name={name} icon={icon} />
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="mx-auto mt-28 max-w-4xl">

@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <a href="#contact" className="cyan-button hidden !px-6 !py-2.5 sm:inline-flex">
+          <a href="#contact" className="cyan-button hidden !px-6 !py-2.5 lg:inline-flex">
             Hire me
           </a>
           <button
@@ -96,6 +96,13 @@ const Navbar = () => {
             {label}
           </a>
         ))}
+        <a
+          href="#contact"
+          onClick={() => setIsOpen(false)}
+          className="cyan-button mt-4 w-full"
+        >
+          Hire me
+        </a>
       </div>
     </header>
   );
