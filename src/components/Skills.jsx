@@ -29,11 +29,11 @@ const skills = [
 ];
 
 const SkillCard = ({ name, icon }) => (
-  <div className="panel group flex min-h-36 w-36 shrink-0 flex-col items-center justify-center gap-4 p-4 text-center transition-colors hover:border-cyan-300/40 sm:w-40">
-    <span className="text-2xl text-cyan-300 transition-transform group-hover:-translate-y-1">
+  <div className="panel group flex min-h-36 w-36 shrink-0 flex-col items-center justify-center gap-4 p-4 text-center transition-colors sm:w-40">
+    <span className="text-2xl text-neutral-950 transition-transform group-hover:-translate-y-1 group-hover:text-red-500">
       {icon}
     </span>
-    <span className="font-general text-[9px] uppercase tracking-[0.16em] text-slate-400">
+    <span className="font-general text-[11px] font-bold uppercase tracking-[0.08em] text-neutral-600">
       {name}
     </span>
   </div>
@@ -79,7 +79,7 @@ const timeline = [
 
 const Skills = () => {
   return (
-    <section className="border-b border-white/10 bg-[#070b14] py-24 md:py-32">
+    <section className="border-b-2 border-neutral-950 bg-neutral-50 py-24 md:py-32">
       <div className="section-shell">
         <div className="text-center">
           <p className="section-kicker">04 / Technical arsenal</p>
@@ -104,20 +104,20 @@ const Skills = () => {
         <div className="mx-auto mt-28 max-w-4xl">
           <div className="text-center">
             <p className="section-kicker">Career timeline</p>
-            <h3 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-white md:text-5xl">
+            <h3 className="mt-4 font-display text-3xl uppercase leading-tight text-neutral-950 md:text-5xl">
               A journey still taking shape.
             </h3>
           </div>
 
           <div className="relative mt-14">
-            <div className="absolute bottom-0 left-[5px] top-0 w-px bg-white/10" />
+            <div className="absolute bottom-0 left-[5px] top-0 w-0.5 bg-neutral-300" />
             <div className="space-y-12">
               {timeline.map(({ date, title, text }) => (
                 <article key={title} className="relative pl-10">
-                  <span className="absolute left-0 top-1 size-[11px] border border-cyan-300 bg-[#070b14]" />
+                  <span className="absolute left-0 top-1 size-[11px] border-2 border-neutral-950 bg-neutral-50" />
                   <p className="section-kicker">{date}</p>
-                  <h4 className="mt-3 text-xl font-medium text-white">{title}</h4>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
+                  <h4 className="mt-3 text-xl font-extrabold text-neutral-950">{title}</h4>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-neutral-600">
                     {text}
                   </p>
                 </article>

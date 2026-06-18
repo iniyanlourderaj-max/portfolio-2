@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
+        display: ["Archivo Black", "Impact", "'Arial Black'", "sans-serif"],
+        mono: ["Space Mono", "'Courier New'", "Consolas", "monospace"],
+        general: ["Work Sans", "-apple-system", "'Segoe UI'", "Helvetica", "sans-serif"],
         zentry: ["zentry", "sans-serif"],
-        general: ["general", "sans-serif"],
         "circular-web": ["circular-web", "sans-serif"],
         "robert-medium": ["robert-medium", "sans-serif"],
         "robert-regular": ["robert-regular", "sans-serif"],

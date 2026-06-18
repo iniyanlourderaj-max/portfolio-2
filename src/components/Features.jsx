@@ -1,3 +1,5 @@
+import HeroHelmet from "./HeroHelmet.jsx";
+
 const experiences = [
   {
     number: "01",
@@ -43,35 +45,36 @@ const experiences = [
 
 const Features = () => {
   return (
-    <section id="experience" className="border-b border-white/10 bg-[#0a0f1b] py-24 md:py-32">
-      <div className="section-shell">
+    <section id="experience" className="relative overflow-hidden border-b-2 border-neutral-950 bg-neutral-100 py-24 md:py-32">
+      <HeroHelmet />
+      <div className="section-shell relative z-10">
         <div className="max-w-3xl">
           <p className="section-kicker">02 / Experience</p>
           <h2 className="section-title mt-5">Learning by building and leading.</h2>
         </div>
 
-        <div className="mt-14 border-t border-white/10">
+        <div className="mt-14 border-t-2 border-neutral-950">
           {experiences.map(({ number, date, title, description, tags }) => (
             <article
               key={title}
-              className="group grid gap-5 border-b border-white/10 py-8 transition-colors hover:bg-white/[0.02] md:grid-cols-[4rem_0.7fr_1.3fr] md:px-4"
+              className="group grid gap-5 border-b-2 border-neutral-300 py-8 transition-colors hover:bg-neutral-50 md:grid-cols-[4rem_0.7fr_1.3fr] md:px-4"
             >
-              <span className="font-general text-[10px] tracking-[0.2em] text-cyan-300">
+              <span className="font-mono text-sm font-bold text-neutral-950">
                 {number}
               </span>
               <div>
-                <p className="font-general text-[9px] uppercase tracking-[0.18em] text-slate-500">
+                <p className="font-general text-[11px] font-bold uppercase tracking-[0.12em] text-neutral-500">
                   {date}
                 </p>
-                <h3 className="mt-3 text-xl font-medium text-white md:text-2xl">
+                <h3 className="mt-3 text-xl font-extrabold text-neutral-950 md:text-2xl">
                   {title}
                 </h3>
               </div>
               <div>
-                <p className="max-w-xl text-sm leading-7 text-slate-400">
+                <p className="max-w-xl text-sm leading-7 text-neutral-600">
                   {description}
                 </p>
-                <p className="mt-4 font-general text-[9px] uppercase tracking-[0.16em] text-cyan-300/70">
+                <p className="mt-4 font-general text-[11px] font-bold uppercase tracking-[0.08em] text-neutral-950">
                   {tags}
                 </p>
               </div>

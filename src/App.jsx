@@ -7,6 +7,7 @@ import Projects from './components/Projects.jsx'
 import Skills from './components/Skills.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import SpaceBackground from './components/SpaceBackground.jsx'
 
 const App = () => {
   useEffect(() => {
@@ -62,15 +63,18 @@ const App = () => {
   }, [])
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#070b14]">
-      <NavBar/>
-      <Hero/>
-      <Projects/>
-      <Features/>
-      <About/>
-      <Skills/>
-      <Contact/>
-      <Footer/>
+    <main className="space-theme dark relative min-h-screen overflow-x-hidden bg-neutral-50 text-neutral-950">
+      <SpaceBackground enabled />
+      <NavBar />
+      <div className="relative z-10">
+        <Hero/>
+        <Projects/>
+        <Features/>
+        <About/>
+        <Skills/>
+        <Contact/>
+        <Footer/>
+      </div>
     </main>
   )
 }

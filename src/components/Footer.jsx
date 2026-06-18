@@ -6,9 +6,9 @@ const links = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 bg-[#070b14] py-7">
-      <div className="section-shell flex flex-col gap-5 font-general text-[9px] uppercase tracking-[0.18em] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Iniyan Lourderaj</p>
+    <footer className="border-t-2 border-neutral-800 bg-neutral-950 py-7">
+      <div className="section-shell flex flex-col gap-5 font-general text-[11px] font-bold uppercase tracking-[0.12em] text-neutral-400 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; 2026 Iniyan Lourderaj</p>
         <div className="flex flex-wrap gap-6">
           {links.map(({ label, href }) => (
             <a
@@ -16,14 +16,14 @@ const Footer = () => {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="transition-colors hover:text-cyan-300"
+              className="transition-colors hover:text-red-500"
             >
               {label}
             </a>
           ))}
         </div>
-        <a href="#home" className="transition-colors hover:text-cyan-300">
-          Back to top ↑
+        <a href="#home" className="transition-colors hover:text-red-500">
+          Back to top &uarr;
         </a>
       </div>
     </footer>
