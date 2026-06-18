@@ -446,6 +446,25 @@ body {
   position: absolute;
 }
 
+.hero-title {
+  font-size: clamp(4rem, 7.4vw, 7rem);
+  max-width: 880px;
+  overflow-wrap: normal;
+}
+
+.hero-layout {
+  column-gap: clamp(4rem, 7vw, 9rem);
+}
+
+.hero-copy {
+  max-width: 900px;
+}
+
+.hero-info-card {
+  justify-self: end;
+  max-width: 360px;
+}
+
 .hero-helmet {
   display: none;
 }
@@ -609,11 +628,30 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(3.4rem, 18vw, 5.8rem);
+  }
+
+  .hero-info-card {
+    max-width: none;
+  }
+
   .space-theme.dark .hero-helmet {
     height: min(116vw, 500px);
     opacity: 0.5;
     top: 45%;
     width: min(116vw, 500px);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .hero-title {
+    font-size: clamp(4rem, 6.5vw, 5.8rem);
+    max-width: 740px;
+  }
+
+  .hero-layout {
+    column-gap: 3rem;
   }
 }
 

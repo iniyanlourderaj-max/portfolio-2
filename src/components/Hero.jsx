@@ -10,13 +10,13 @@ const Hero = () => {
         <img src="/img/starwars.png" alt="" />
       </div>
 
-      <div className="section-shell relative z-10 grid items-end gap-10 lg:grid-cols-[1.25fr_0.75fr]">
+      <div className="section-shell hero-layout relative z-10 grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_360px]">
         <div className="hero-copy">
           <p className="section-kicker text-neutral-950">
             Computer Science / Bucknell University
           </p>
 
-          <h1 className="mt-5 max-w-5xl font-display text-6xl uppercase leading-[0.9] text-neutral-950 sm:text-7xl md:text-8xl lg:text-[8.5rem]">
+          <h1 className="hero-title mt-5 font-display uppercase leading-[0.9] text-neutral-950">
             Iniyan Lourderaj
           </h1>
 
@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <aside className="border-2 border-neutral-950 bg-neutral-100 p-6 lg:p-8">
+        <aside className="hero-info-card w-full border-2 border-neutral-950 bg-neutral-100 p-6 lg:p-8">
           <p className="section-kicker">Portfolio.jsx</p>
           <div className="mt-8 space-y-4 font-mono text-sm leading-7 text-neutral-700">
             <p>
